@@ -4,7 +4,7 @@
   "description": "A dynamic, highly customizable breadcrumbs component for Next.js",
   "author": "NiklasMencke",
   "license": "MIT",
-  "repository": "NiklasMencke/nextjs-breadcrumbs",
+  "repository": "santigp258/nextjs-breadcrumbs",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
