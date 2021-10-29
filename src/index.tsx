@@ -215,6 +215,9 @@ const Breadcrumbs = ({
                 )}
               </a>
             </Link>
+            {SeparatorComponent && breadcrumbs.length >= 1 && (
+              <SeparatorComponent />
+            )}
           </li>
         )}
         {breadcrumbs.length >= 1 &&
@@ -250,10 +253,8 @@ const Breadcrumbs = ({
                     )}
                   </a>
                 </Link>
-                {SeparatorComponent && (
-                  <div>
-                    {breadcrumbs.length !== i + 1 && <SeparatorComponent />}
-                  </div>
+                {SeparatorComponent && breadcrumbs.length !== i + 1 && (
+                  <SeparatorComponent />
                 )}
               </li>
             );
