@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-breadcrumbs",
-  "version": "1.1.9",
+  "name": "@santigp258/nextjs-breadcrumbs",
+  "version": "1.1.10",
   "description": "A dynamic, highly customizable breadcrumbs component for Next.js",
   "author": "NiklasMencke",
   "license": "MIT",
