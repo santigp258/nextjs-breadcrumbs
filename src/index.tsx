@@ -45,8 +45,10 @@ const convertBreadcrumb = (
     }
   }
 
-  // decode for utf-8 characters and return ascii. 
-  return toUpperCase ? decodeURI(transformedTitle).toUpperCase() : decodeURI(transformedTitle);
+  // decode for utf-8 characters and return ascii.
+  return toUpperCase
+    ? decodeURI(transformedTitle).toUpperCase()
+    : decodeURI(transformedTitle);
 };
 
 export interface Breadcrumb {
@@ -112,6 +114,9 @@ export interface BreadcrumbsProps {
 
   /** Classes to be used for the active breadcrumb list item */
   activeItemClassName?: string;
+
+  /* Separator component */
+  SeparatorComponent?: () => JSX.Element;
 }
 
 const defaultProps: BreadcrumbsProps = {
@@ -161,6 +166,7 @@ const Breadcrumbs = ({
   inactiveItemClassName,
   activeItemStyle,
   activeItemClassName,
+  SeparatorComponent,
 }: BreadcrumbsProps) => {
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState<Array<Breadcrumb> | null>(
@@ -244,6 +250,11 @@ const Breadcrumbs = ({
                     )}
                   </a>
                 </Link>
+                {SeparatorComponent && (
+                  <div>
+                    {breadcrumbs.length !== i + 1 && <SeparatorComponent />}
+                  </div>
+                )}
               </li>
             );
           })}
